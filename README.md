@@ -1,16 +1,55 @@
 # Rock-Paper-Scissor-Game
-
-A popular game named Rock Paper Scissors can be developed in simple format using java. 
-Let's check it out what the game is about before getting into the program itself.
-
-It requires 2 players to play this game.
-Here let's assume the computer is the opposing palyer to you in this simple game to find the winner among you.
-So we will need the omputer input and the players input. 
-Rules for this game are as follows:
-1. The Paper beats the Rock
-2. The Rock beats the Scissors  
-3. The Scissors beats the Paper
      
 Based on the rules we will construct our game.
+
+import java.util.*;
+import java.util.Scanner; 
+import java.util.Random; 
+
+public class RockPaperSci {
+    public static final String ROCK = "ROCK";
+    public static final String PAPER = "PAPER";
+    public static final String SCISSORS = "SCISSORS";
+	
+	public static String getplayM() {
+	Scanner sc =new Scanner(System.in);
+	String input =sc.next();
+	String playerMove =input.toUpperCase();
+	return playerMove;
+	}
+public static String getCm() {
+	String cM = null;
+	Random random = new Random();
+	int input = random.nextInt(3)+1;
+	if(input == 1)
+		cM= RockPaperSci.ROCK;
+	if(input == 2)
+		cM= RockPaperSci.PAPER;
+	if(input == 3)
+		cM= RockPaperSci.SCISSORS;
+	return cM;
+}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("ROCK =1\n PAPER =2\n SCISSORS =3\n");
+				System.out.println("Enter your input:");
+		String computerMove = getCm();
+		String playerMove = getplayM();
+		if(computerMove.equals(playerMove)) {
+			System.out.println("Game is Tie!!");
+		}
+		else if(playerMove.equals(RockPaperSci.ROCK)) {
+			System.out.println(computerMove.equals(RockPaperSci.PAPER)? "Computer wins!":"Player won!");
+		}
+		else if(playerMove.equals(RockPaperSci.PAPER)) {
+			System.out.println(computerMove.equals(RockPaperSci.SCISSORS)? "Computer wins!":"Player won!");
+		}
+		else {
+			System.out.println(computerMove.equals(RockPaperSci.ROCK)? "Computer wins!":"Player won!");
+		}
+	}
+
+}
 
              
