@@ -11,6 +11,6 @@ Rules for this game are as follows:
 2. The Rock beats the Scissors  
 3. The Scissors beats the Paper
      
-Based on the rules we will construct our game for our development.
+Based on the rules we will construct our game for practise.
 
              
